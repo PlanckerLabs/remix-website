@@ -21,7 +21,7 @@ const locales = [
 
 function App() {
     const queryParams = new QueryParams()
-    const lang = queryParams.get().lang || 'en'
+    const lang = queryParams.get().lang || 'zh'
     const defaultLocale = locales.find(locale => locale.code === lang)
     const [locale, setLocale] = useState(defaultLocale)
     return (
