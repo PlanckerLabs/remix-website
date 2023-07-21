@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage, useIntl } from 'react-intl';
 import Carousel from "../ui/Carousel";
 import devconImage from "../../assets/images/devcon.png";
 import ethSafariImage from "../../assets/images/ethSafari.png";
@@ -12,54 +13,56 @@ import {sectionId} from "../../constants";
 import {SwiperSlide} from "swiper/react";
 
 const Events = () => {
+    const intl = useIntl()
+
     const eventsData = [
         {
             id: 0,
             name: 'Devcon',
-            date: 'October 2022',
+            date: intl.formatMessage({ id: "events.0.date" }),
             image: devconImage,
-            location: 'Bogota, Columbia',
-            description: 'Come and See!',
+            location: intl.formatMessage({ id: "events.0.location" }),
+            description: intl.formatMessage({ id: "events.0.description" }),
         },
         {
             id: 1,
             name: 'EthSafari',
-            date: 'September 2022',
+            date: intl.formatMessage({ id: "events.1.date" }),
             image: ethSafariImage,
-            location: 'Nairobi, Kenya',
-            description: 'Remix Essentials',
+            location: intl.formatMessage({ id: "events.1.location" }),
+            description: intl.formatMessage({ id: "events.1.description" }),
         },
         {
             id: 2,
-            name: 'Kuala Lumpur Ethereum Meetup',
-            date: 'May 2022',
+            name: intl.formatMessage({ id: "events.2.name" }),
+            date: intl.formatMessage({ id: "events.2.date" }),
             image: klImage,
-            location: 'Kuala Lumpur and Online',
-            description: 'A Stroll through Remix',
+            location: intl.formatMessage({ id: "events.2.location" }),
+            description: intl.formatMessage({ id: "events.2.description" }),
         },
         {
             id: 3,
-            name: 'Devconnnect / Solidity Summit',
-            date: 'April 2022',
+            name: intl.formatMessage({ id: "events.3.name" }),
+            date: intl.formatMessage({ id: "events.3.date" }),
             image: solidityImage,
-            location: 'Amsterdam, Netherlands',
-            description: 'Remix Hybrid Tools',
+            location: intl.formatMessage({ id: "events.3.location" }),
+            description: intl.formatMessage({ id: "events.3.description" }),
         },
         {
             id: 4,
             name: 'Devconnnect',
-            date: 'April 2022',
+            date: intl.formatMessage({ id: "events.4.date" }),
             image: remixImage,
-            location: 'Amsterdam, Netherlands',
-            description: 'Gameday Remix, a Remix-based Scavenger Hunt',
+            location: intl.formatMessage({ id: "events.4.location" }),
+            description: intl.formatMessage({ id: "events.4.description" }),
         },
         {
             id: 5,
             name: 'EthDenver',
-            date: 'February 2022',
+            date: intl.formatMessage({ id: "events.5.date" }),
             image: denverImage,
-            location: 'Denver, USA',
-            description: 'Remix for Hackathons',
+            location: intl.formatMessage({ id: "events.5.location" }),
+            description: intl.formatMessage({ id: "events.5.description" }),
         }
     ];
 
@@ -70,17 +73,13 @@ const Events = () => {
         bg-no-repeat
         bg-remix-desktop-background-position">
                 <div className="container mx-auto pb-20 pt-36 md:pt-50">
-                    <h1 className="text-center font-sfProThin pb-2 md:text-8xl">EVENTS</h1>
-                    <h2 className="text-center text-4xl md:text-5xl font-latoBold pb-6">MIXING IT UP WITH THE COMMUNITY</h2>
+                    <h1 className="text-center font-sfProThin pb-2 md:text-8xl"><FormattedMessage id="events.events" /></h1>
+                    <h2 className="text-center text-4xl md:text-5xl font-latoBold pb-6"><FormattedMessage id="events.mixingItUp" /></h2>
                     <p className="text-center
                 font-sfProRegular
                 text-gray
                 text-lg xl:px-72 lg:px-6 px-6">
-                        The Remix Project team gives workshops about Remix, as well as more general
-                        introductions to the Ethereum ecosystem and its associated use cases.
-                        We can tailor our presentations to the technical knowledge and skill
-                        level of your particular group, and we try to give entertaining talks.
-                        Reach out to us by email, or chat with us on one of our Gitter channels or Twitter.
+                        <FormattedMessage id="events.text" />
                     </p>
                     <div className="container mx-auto pb-20 pt-2">
                         <Carousel>
